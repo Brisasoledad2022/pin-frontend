@@ -12,10 +12,11 @@ function App() {
     <div className="w-100 min-vh-100">
       <Navbar />
       <Home />
+      <About name="Brisita"/>
       <Products />
       <Services />
       <Contact />
-      <About name="Brisita"/>
+      
     </div>
   );
 }
