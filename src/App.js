@@ -1,5 +1,6 @@
 //import logo from "./logo.svg";
 import "./App.css";
+//import "./index.scss";
 import Navbar from "./sections/Navbar/Navbar";
 import Home from "./sections/Home/Home";
 import Products from "./sections/Products/Products";
@@ -12,7 +13,7 @@ function App() {
     <div className="w-100 min-vh-100">
       <Navbar />
       <Home />
-      <About name="Brisita"/>
+      <About />
       <Products />
       <Services />
       <Contact />

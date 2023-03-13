@@ -1,4 +1,4 @@
-import logo from "../../assets/logo192.png";
+import logo from "../../assets/logo.png";
 function Navbar() {
   const menuItems = [
     {
@@ -23,6 +23,7 @@ function Navbar() {
     },
   ];
   return (
+    <header class="header">(
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -40,7 +41,7 @@ function Navbar() {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <ul class="navbar-nav m-auto">
 
             {
               menuItems.map(item =>  <li class="nav-item"> 
@@ -48,7 +49,9 @@ function Navbar() {
                 {item.name}
               </a>
             </li> )
+           
             }
+          
             {/* <li class="nav-item"> 
               <a class="nav-link active" aria-current="page" href="#">
                 Home
@@ -79,5 +82,7 @@ function Navbar() {
       </div>
     </nav>
   );
+  </header>);
 }
+
 export default Navbar;
