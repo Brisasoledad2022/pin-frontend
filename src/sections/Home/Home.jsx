@@ -1,6 +1,6 @@
 import image1 from"../../assets/bar1.jpg"
 import image2 from"../../assets/bar2.jpeg"
-import image3 from"../../assets/bar3.jpg"
+import image3 from"../../assets/bar007.jpeg"
 
 function Home(){
     return(
@@ -14,21 +14,21 @@ function Home(){
             <div className="carousel-item active">
               <img
                 src={image1}
-                className="d-block w-100"
+                className="d-block w-100 img-carousel"
                 alt="..."
               />
             </div>
             <div className="carousel-item">
               <img
                 src={image2}
-                className="d-block w-100"
+                className="d-block w-100 img-carousel"
                 alt="..."
               />
             </div>
             <div className="carousel-item">
               <img
                 src={image3}
-                className="d-block w-100"
+                className="d-block w-100 img-carousel"
                 alt="..."
               />
             </div>

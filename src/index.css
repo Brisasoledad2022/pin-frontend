@@ -31,7 +31,14 @@ code {
   background-color: transparent !important;
   position: fixed;
 }
-header .navbar-brand .logo {
-  width: 150px; /* Cambia el tamaño según tus necesidades */
+.header .navbar-brand .logo {
+  width: 50px; /* Cambia el tamaño según tus necesidades */
   height: auto; /* Para mantener la proporción original de la imagen */
+}
+.logo{
+  width: 50px;
+  height: auto;
+}
+.img-carousel {
+  max-height: 100vh;
 }

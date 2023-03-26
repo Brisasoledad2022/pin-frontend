@@ -2,8 +2,8 @@ function About(props) {
   return (
     <div id="About">
       <h2>About Us</h2>
-      <div class="card">
-        <div class="card-body">
+      <div className="card">
+        <div className="card-body">
           <p>
             Welcome to "The bloom" an exclusive bar for young people where you
             can indulge in a night of luxury and excitement. As soon as you
