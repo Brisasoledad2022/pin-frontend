@@ -1,9 +1,11 @@
 
 import { Field, Form, Formik } from "formik";
+import { sendMessage } from "../../helpers/apiServices";
 
 function Contact() {
   const handleSubmit = (values) => {
     console.log(values);
+    sendMessage(values)
   };
 
   return (
