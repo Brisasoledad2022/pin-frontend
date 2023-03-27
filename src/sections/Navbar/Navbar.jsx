@@ -24,7 +24,7 @@ function Navbar() {
   ];
 
   return (
-    <header className="d-flex align-items-center w-100 bg-transparent justify-content-between px-4">
+    <header className="d-flex align-items-center w-100 bg-transparent justify-content-between py-5 container">
       <img className="logo" alt="logo" src={logo} />
 
       <div className="d-flex align-items-center ">

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: rgb(230, 213, 213);
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -32,11 +33,11 @@ code {
   position: fixed;
 }
 .header .navbar-brand .logo {
-  width: 50px; /* Cambia el tamaño según tus necesidades */
-  height: auto; /* Para mantener la proporción original de la imagen */
+  width: 50px; 
+  height: auto; 
 }
 .logo{
-  width: 50px;
+  width: 150px;
   height: auto;
 }
 .img-carousel {

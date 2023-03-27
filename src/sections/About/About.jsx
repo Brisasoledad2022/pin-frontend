@@ -1,6 +1,6 @@
 function About(props) {
   return (
-    <div id="About">
+    <div id="About" className="container my-5">
       <h2>About Us</h2>
       <div className="card">
         <div className="card-body">
