@@ -1,38 +1,14 @@
 import logo from "../../assets/logo.png";
-function Navbar() {
-  const menuItems = [
-    {
-      name: "Home",
-      url: "#Home",
-    },
-    {
-      name: "About",
-      url: "#About",
-    },
-    {
-      name: "Products",
-      url: "#Products",
-    },
-    {
-      name: "Services",
-      url: "#Services",
-    },
-    {
-      name: "Contacts",
-      url: "#Contacts",
-    },
-  ];
+
+const Navbar = () => {
+  const menuItems = ["Home", "About", "Products", "Services", "Contacts"];
 
   return (
     <header className="d-flex align-items-center w-100 bg-transparent justify-content-between py-5 container">
       <img className="logo" alt="logo" src={logo} />
 
       <div className="d-flex align-items-center ">
-        {menuItems.map((item) => (
-          <a className="mx-3" key={item.name} href={item.url}>
-            {item.name}
-          </a>
-        ))}
+        {menuItems.map(item => <a className="mx-3" key={item} href={`#${item}`}>{item}</a>)}
       </div>
     </header>
   );
