@@ -1,4 +1,5 @@
 
+
 import { Field, Form, Formik } from "formik";
 import { sendMessage } from "../../helpers/apiServices";
 
@@ -75,6 +76,7 @@ function Contact() {
           </Form>
         )}
       </Formik>
+
     </section>
   );
 }

@@ -1,5 +1,6 @@
 import logo from "../../assets/logo.png";
 
+
 const Navbar = () => {
   const menuItems = ["Home", "About", "Products", "Services", "Contacts"];
 
@@ -27,6 +28,7 @@ const Navbar = () => {
       </div>
     </header>
   );
+
 }
 
 export default Navbar;

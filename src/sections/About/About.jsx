@@ -1,3 +1,4 @@
+
 import { aboutText } from "./aboutText";
 
 const About = ()  => {
@@ -7,6 +8,7 @@ const About = ()  => {
       <div className="card">
         <div className="card-body">
           <p>{aboutText}</p>
+
         </div>
       </div>
     </div>

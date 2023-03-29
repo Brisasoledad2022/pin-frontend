@@ -2,6 +2,7 @@ import React from "react";
 
 function Services() {
   return (
+
     <div id="Services" className="container my-5">
       <h2>Services</h2>
       <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -9,6 +10,7 @@ function Services() {
           <h2 className="accordion-header" id="flush-headingOne">
             <button
               className="accordion-button collapsed"
+
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseOne"
@@ -20,6 +22,7 @@ function Services() {
           </h2>
           <div
             id="flush-collapseOne"
+
             className="accordion-collapse collapse"
             aria-labelledby="flush-headingOne"
             data-bs-parent="#accordionFlushExample"
@@ -45,6 +48,7 @@ function Services() {
           <h2 className="accordion-header" id="flush-headingTwo">
             <button
               className="accordion-button collapsed"
+
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseTwo"
@@ -56,6 +60,7 @@ function Services() {
           </h2>
           <div
             id="flush-collapseTwo"
+
             className="accordion-collapse collapse"
             aria-labelledby="flush-headingTwo"
             data-bs-parent="#accordionFlushExample"
@@ -82,6 +87,7 @@ function Services() {
           <h2 className="accordion-header" id="flush-headingThree">
             <button
               className="accordion-button collapsed"
+
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#flush-collapseThree"
@@ -93,6 +99,7 @@ function Services() {
           </h2>
           <div
             id="flush-collapseThree"
+
             className="accordion-collapse collapse"
             aria-labelledby="flush-headingThree"
             data-bs-parent="#accordionFlushExample"
@@ -115,6 +122,7 @@ function Services() {
               Bloom take care of everything and create a celebration that you
               and your guests will never forget. Contact us today to start
               planning your dream event!
+
             </div>
           </div>
         </div>

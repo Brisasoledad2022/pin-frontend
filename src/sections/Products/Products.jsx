@@ -1,3 +1,4 @@
+
 import image4 from "../../assets/traguito_frutilla.jpg";
 import image5 from "../../assets/wedding00.jpg";
 import image6 from "../../assets/breakfast4.jpg";
@@ -83,3 +84,4 @@ function Products() {
   );
 }
 export default Products;
+
