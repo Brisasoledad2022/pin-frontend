@@ -1,6 +1,4 @@
-//import logo from "./logo.svg";
-import "./App.css";
-//import "./index.scss";
+
 import Navbar from "./sections/Navbar/Navbar";
 import Home from "./sections/Home/Home";
 import Products from "./sections/Products/Products";

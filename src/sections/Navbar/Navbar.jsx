@@ -2,7 +2,7 @@ import logo from "../../assets/logo.png";
 
 
 const Navbar = () => {
-  const menuItems = ["Home", "About", "Products", "Services", "Contacts"];
+  const menuItems = ["About", "Products", "Services", "Contacts"];
 
   const clickHandler = id => {
     document.getElementById(id).scrollIntoView({behavior: 'smooth'})
