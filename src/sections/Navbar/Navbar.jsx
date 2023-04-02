@@ -1,11 +1,14 @@
+import React from 'react';
 import logo from "../../assets/logo.png";
 
 
 const Navbar = () => {
-  const menuItems = ["Home", "About", "Products", "Services", "Contacts"];
+  const menuItems = ["Home", "About", "Products", "Services", "Contact"];
 
   const clickHandler = id => {
-    document.getElementById(id).scrollIntoView({behavior: 'smooth'})
+    if(id !== 'Home'){
+      document.getElementById(id).scrollIntoView({behavior: 'smooth'})
+    }
   }
 
   return (

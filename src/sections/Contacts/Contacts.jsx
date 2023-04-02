@@ -1,82 +1,61 @@
-
+import React, {useState} from 'react';
 
 import { Field, Form, Formik } from "formik";
 import { sendMessage } from "../../helpers/apiServices";
 
-function Contact() {
-  const handleSubmit = (values) => {
-    console.log(values);
-    sendMessage(values)
+const Contact = () => {
+  const initialValues = {
+    name : '',
+    email : '',
+    phone : '',
+    message : ''
+  }
+
+  const keys = Object.keys(initialValues);
+  const [formValues, setFormValues] = useState(initialValues);
+
+  const handleSubmit = () => {
+    console.log(formValues);
+    sendMessage(formValues);
   };
 
+  const validate = () => {
+    const errors = {};
+    if(!formValues.name) errors.name='Nombre requerido'
+    if(!formValues.email) {
+      errors.email='Email requerido'
+    } else if(!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i.test(formValues.email)){
+      errors.email = "Formato de Email incorrecto"
+    }
+    if (!formValues.message) errors.message = "Campo requerido"
+    return errors;
+  }
+
   return (
-    <section id="Contacts" className="container my-5">
-      <h2>Contacts</h2>
+    <section id="Contact" className="container my-5">
+      <h2>Contact</h2>
       <Formik
         onSubmit={handleSubmit}
-        initialValues={{
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.name) {
-            errors.name = "Nombre requerido";
-          }
-
-          if (!values.email) {
-            errors.email = "Email requerido";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Formato de Email incorrecto";
-          }
-
-          if (!values.message) {
-            errors.message = "Campo requerido";
-          }
-          return errors;
-        }}
+        validate={validate}
       >
         {({ touched, errors, isValid }) => (
           <Form>
-            <div className="d-flex flex-column">
-              <label>Name</label>
-              <Field name="name" type="text" />
-              {touched.name && errors.name && (
-                <p className="text-danger my-1">{errors.name}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Email</label>
-              <Field name="email" type="text" />
-              {touched.email && errors.email && (
-                <p className="text-danger my-1">{errors.email}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Phone</label>
-              <Field name="phone" type="text" />
-              {touched.phone && errors.phone && (
-                <p className="text-danger my-1">{errors.phone}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Message</label>
-              <Field name="message" type="text" as="textarea" />
-              {touched.message && errors.message && (
-                <p className="text-danger my-1">{errors.message}</p>
-              )}
-            </div>
+            {keys.map(key => (
+              <div className="d-flex flex-column" key={key}>
+                <label>{key[0].toUpperCase()+key.slice(1)}</label>
+                <Field 
+                  name={key} 
+                  onChange={e => setFormValues({...formValues, [key]: e.target.value })}
+                />
+                {touched[key] && errors[key] && <p className="text-danger my-1">{errors[key]}</p>}
+              </div>
+            ))}
             <button type="submit" disabled={!isValid}>
               Send
             </button>
           </Form>
         )}
       </Formik>
-
     </section>
   );
 }
