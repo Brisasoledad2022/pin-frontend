@@ -7,6 +7,7 @@ import Products from "./sections/Products/Products";
 import Services from "./sections/Services/Services";
 import Contact from "./sections/Contacts/Contacts";
 import About from "./sections/About/About";
+import Footer from './sections/Footer';
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       <Products />
       <Services />
       <Contact />
-      
+      <Footer />
     </div>
   );
 }
