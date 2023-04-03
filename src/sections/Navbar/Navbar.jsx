@@ -6,9 +6,7 @@ const Navbar = () => {
   const menuItems = ["Home", "About", "Products", "Services", "Contact"];
 
   const clickHandler = id => {
-    if(id !== 'Home'){
-      document.getElementById(id).scrollIntoView({behavior: 'smooth'})
-    }
+    document.getElementById(id).scrollIntoView({behavior: 'smooth'})
   }
 
   return (

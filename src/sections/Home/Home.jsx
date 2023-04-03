@@ -6,7 +6,7 @@ import image3 from"../../assets/bar007.jpeg"
 
 function Home(){
     return(
-      <div className="container">
+      <div className="container" id='Home'>
         <div
           id="carouselExampleControls"
           className="carousel slide"

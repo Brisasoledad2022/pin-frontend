@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { Field, Form, Formik } from "formik";
 import { sendMessage } from "../../helpers/apiServices";
@@ -14,8 +14,13 @@ const Contact = () => {
   const keys = Object.keys(initialValues);
   const [formValues, setFormValues] = useState(initialValues);
 
-  const handleSubmit = () => {
+  useEffect(()=>{
     console.log(formValues);
+    
+  },[formValues])
+
+
+  const handleSubmit = () => {
     sendMessage(formValues);
   };
 
@@ -38,7 +43,7 @@ const Contact = () => {
         onSubmit={handleSubmit}
         validate={validate}
       >
-        {({ touched, errors, isValid }) => (
+        {({ touched, errors, isValid}) => (
           <Form>
             {keys.map(key => (
               <div className="d-flex flex-column" key={key}>

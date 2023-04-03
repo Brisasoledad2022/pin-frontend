@@ -2,6 +2,12 @@ import React from 'react';
 import logo from "../../assets/logo.png";
 
 const Footer = () => {
+    const footerLinks = ["Home", "About", "Products", "Services", "Contact"];
+
+    const clickHandler = id => {
+        document.getElementById(id).scrollIntoView({behavior: 'smooth'})
+    }
+
     return(
         <footer className="bg-light text-center text-lg-start">
             <div className="container p-4">
@@ -16,24 +22,17 @@ const Footer = () => {
                         </p>
                     </div>
                     <div className="col-lg-3 col-md-6 mb-4 mb-md-0">
-                        <h5 className="text-uppercase">Links</h5>
-                        <ul className="list-unstyled mb-0">
-                            <li>
-                                <a href="#Home" className="text-dark">Home</a>
-                            </li>
-                            <li>
-                                <a href="#About" className="text-dark">About</a>
-                            </li>
-                            <li>
-                                <a href="#Products" className="text-dark">Products</a>
-                            </li>
-                            <li>
-                                <a href="#Services" className="text-dark">Services</a>
-                            </li>
-                            <li>
-                                <a href="#Contact" className="text-dark">Contact</a>
-                            </li>
-                        </ul>
+                        <h5 className="text-uppercase mx-5">Links</h5>
+                        {footerLinks.map(item => ( 
+                            <button 
+                                name={item} 
+                                key={item} 
+                                className='mx-5 bg-transparent border-0' 
+                                onClick={e => clickHandler(e.target.name)}
+                            >
+                                {item}
+                            </button>)
+                        )}
                     </div>
                 </div>
             </div>
