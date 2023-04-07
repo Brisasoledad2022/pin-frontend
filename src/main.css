@@ -3876,4 +3876,8 @@
   border-bottom: 1px solid #e0752f;
 }
 
+.neon {
+  text-shadow: 0px 0px 5px white, 0px 0px 15px white, 0px 0px 30px white, 0px 0px 50px white;
+}
+
 /*# sourceMappingURL=main.css.map */

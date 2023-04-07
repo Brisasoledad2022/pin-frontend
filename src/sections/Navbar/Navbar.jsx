@@ -1,4 +1,4 @@
-import logo from "../../assets/logo3.png";
+import logo from "../../assets/logo2.png";
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
           <button 
             name={item} 
             key={item} 
-            className='mx-3 bg-transparent border-0 text-light fs-4' 
+            className='mx-3 bg-transparent border-0 text-light fs-4 neon' 
             onClick={e => clickHandler(e.target.name)}
           >
             {item}

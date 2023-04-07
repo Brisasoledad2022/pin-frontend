@@ -3,7 +3,7 @@ import React from "react";
 export default function About() {
   return (
     <div
-      className="d-flex flex-column justify-content-center align-items-center w-100 p-5 position-relative"
+      className="d-flex flex-column justify-content-center align-items-center w-100 p-5 mt-4 position-relative"
       id="About"
     >
       <div className="d-flex flex-column align-items-start font-poppins mb-5 w-50">
