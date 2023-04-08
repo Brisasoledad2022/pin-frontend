@@ -1,87 +1,68 @@
 
-import image4 from "../../assets/traguito_frutilla.jpg";
-import image5 from "../../assets/wedding00.jpg";
-import image6 from "../../assets/breakfast4.jpg";
+import React, { useState } from "react";
+import image1 from "../../assets/wedding1.jpg";
+import image2 from "../../assets/traguitopinkrm2.jpg";
+import image3 from "../../assets/breakfast8RM.jpg";
+import {
+  UilArrowCircleLeft,
+  UilArrowCircleRight,
+} from "@iconscout/react-unicons";
 
-function Products() {
+export default function Products() {
+  const images = [image1, image2, image3];
+
+  const [step, setStep] = useState(0);
+
+  const prevStep = () => {
+    if (step === 0) {
+      setStep(images.length - 1);
+    } else {
+      setStep((step) => step - 1);
+    }
+  };
+
+  const nextStep = () => {
+    if (step === images.length - 1) {
+      setStep(0);
+    } else {
+      setStep((step) => step + 1);
+    }
+  };
+
   return (
-    <div id="Products" className="container">
-      <h2>Products</h2>
-      <div id="carouselExampleCaptions" className="carousel slide">
-        <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleCaptions"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src={image4} className="d-block w-100 img-carousel" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Cocktails</h5>
-              <p>Try and enjouy our best selection in fine cocktail making.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={image6} className="d-block w-100 img-carousel" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Brunch Service</h5>
-              <p>Enjoy our luxurious brunchs with the best ingredients.</p>
-            </div>
-          </div>
-          <div className="carousel-item">
-            <img src={image5} className="d-block w-100 img-carousel" alt="..." />
-            <div className="carousel-caption d-none d-md-block">
-              <h5>Wedding receptions</h5>
-              <p>
-                Let the Bloom take charge of your wedding reception and just relax
-              </p>
-            </div>
+    <div className="d-flex w-100 vh-100 position-relative" id="Products">
+      <div className="col-8 bg-white h-100"></div>
+      <div className="col-4 bg-orange h-100"></div>
+      <div
+        className="position-absolute top-50 start-50 translate-middle vw-75 vh-75"
+        style={{
+          background: `transparent url(${images[step]}) 0% 0% no-repeat padding-box`,
+        }}
+      >
+        <div style={{backdropFilter: 'blur(8px)'}} className="d-flex flex-column justify-content-center align-items-start p-5 position-absolute bottom-0 end-0 bg-transparent text-light w-50">
+          <p className="m-0 fw-bold text-orange">Sed ut perspiciatis</p>
+          <h1 className="mb-4 text-black">Nemo Enim {step}</h1>
+          <p>
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+            accusantium doloremque laudantium, totam rem aperiam.
+          </p>
+
+          <div className="d-flex justify-content-end align-items-center w-100">
+            <UilArrowCircleLeft
+              className="cursor-pointer"
+              color="#222"
+              size={35}
+              onClick={() => prevStep()}
+            />
+            <UilArrowCircleRight
+              className="cursor-pointer"
+              color="#222"
+              size={35}
+              onClick={() => nextStep()}
+            />
           </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleCaptions"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
       </div>
     </div>
   );
 }
-export default Products;
-
