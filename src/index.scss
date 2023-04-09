@@ -25,7 +25,20 @@ $white: #fff;
 // 4. Include any optional Bootstrap CSS as needed
 @import "../node_modules/bootstrap/scss/utilities";
 
+
 // Maps
+
+
+// Cursor
+$utilities: map-merge(
+  $utilities,
+  (
+    'cursor': (
+      property: cursor,
+      values: none not-allowed pointer help,
+    ),
+  )
+);
 
 $position-values: (
   0: 0,

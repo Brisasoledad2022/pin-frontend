@@ -1677,6 +1677,22 @@
   visibility: hidden !important;
 }
 
+.cursor-none {
+  cursor: none !important;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed !important;
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.cursor-help {
+  cursor: help !important;
+}
+
 @media (min-width: 576px) {
   .float-sm-start {
     float: left !important;
