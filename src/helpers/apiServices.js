@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "URL a gestionar";
+const baseURL = "https://pin-backend-production-9c43.up.railway.app";
 
 export const sendMessage = async (values) => {
   const response = await axios({
