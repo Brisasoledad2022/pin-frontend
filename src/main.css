@@ -4284,4 +4284,8 @@ textarea {
   resize: none;
 }
 
+.text-justify {
+  text-align: justify;
+}
+
 /*# sourceMappingURL=main.css.map */

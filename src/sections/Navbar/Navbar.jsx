@@ -22,7 +22,7 @@ const Navbar = () => {
             className='mx-3 bg-transparent border-0 text-light fs-4 neon' 
             onClick={e => clickHandler(e.target.name)}
           >
-            {item}
+            {item.toUpperCase()}
           </button>)
           )}
       </div>

@@ -71,6 +71,7 @@ $utilities: map-merge(
       values: (
         "orange": $orange,
         "gray": $gray-input,
+
       ),
     ),
   )
@@ -250,4 +251,7 @@ $utilities: map-merge(
 
 textarea {
   resize: none;
+}
+.text-justify {
+  text-align: justify;
 }

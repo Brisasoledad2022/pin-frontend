@@ -1,4 +1,4 @@
-import Navbar from "./sections/Navbar/Navbar";
+
 import Home from "./sections/Home/Home";
 import Products from "./sections/Products/Products";
 import Services from "./sections/Services/Services";
