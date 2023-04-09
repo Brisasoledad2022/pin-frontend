@@ -20,7 +20,7 @@ const Navbar = () => {
             name={item} 
             key={item} 
 
-            className='mx-3 bg-transparent border-0 text-light fs-4 fw-bold neon' 
+            className='mx-3 bg-transparent border-0 text-light fs-4 neon' 
 
             onClick={e => clickHandler(e.target.name)}
           >
