@@ -1,4 +1,5 @@
 
+
 import React, { useState } from "react";
 import image1 from "../../assets/wedding1.jpg";
 import image2 from "../../assets/traguitopinkrm2.jpg";
@@ -83,3 +84,4 @@ import {
       </div>
     );
   }
+

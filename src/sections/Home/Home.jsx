@@ -2,7 +2,8 @@ import image1 from"../../assets/bar1.jpg"
 import image2 from"../../assets/bar2.jpeg"
 
 import image3 from"../../assets/bar007.jpeg"
-import Navbar from "../Navbar/Navbar"
+
+
 
 
 function Home(){
@@ -23,7 +24,9 @@ function Home(){
 
                 className="d-block w-100 img-carousel"
 
+
                 alt="bar entry"
+
               />
             </div>
             <div className="carousel-item">
@@ -33,6 +36,7 @@ function Home(){
                 className="d-block w-100 img-carousel"
 
                 alt="bar entry different view"
+
               />
             </div>
             <div className="carousel-item">
@@ -41,7 +45,9 @@ function Home(){
 
                 className="d-block w-100 img-carousel"
 
+
                 alt=" bar entry different view front"
+
               />
             </div>
           </div>
