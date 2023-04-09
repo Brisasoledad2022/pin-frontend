@@ -99,7 +99,7 @@ export default function Contact() {
       <div className="col-4 bg-orange"></div>
       <img
         src={image3}
-        alt="Sunset"
+        alt="bar view"
         className="vw-30 position-absolute top-50 end-0 translate-middle"
       />
     </div>
