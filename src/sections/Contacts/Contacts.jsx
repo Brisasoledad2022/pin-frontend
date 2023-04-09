@@ -1,83 +1,107 @@
 
+import React from 'react';
+import { Field, Form, Formik } from 'formik';
+import image3 from '../../assets/fondo2.webp';
 
-import { Field, Form, Formik } from "formik";
-import { sendMessage } from "../../helpers/apiServices";
-
-function Contact() {
+export default function Contact() {
   const handleSubmit = (values) => {
     console.log(values);
-    sendMessage(values)
   };
 
+  const fields = [
+    {
+      name: 'Name',
+      type: 'text',
+    },
+    {
+      name: 'Email',
+      type: 'text',
+    },
+    {
+      name: 'Phone',
+      type: 'text',
+    },
+    {
+      name: 'Message',
+      type: 'text',
+    },
+  ];
+
   return (
-    <section id="Contacts" className="container my-5">
-      <h2>Contacts</h2>
-      <Formik
-        onSubmit={handleSubmit}
-        initialValues={{
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        }}
-        validate={(values) => {
-          const errors = {};
-          if (!values.name) {
-            errors.name = "Nombre requerido";
-          }
+    <div className="d-flex w-100 vh-100 position-relative" id="Contact">
+      <div className="d-flex flex-column justify-content-center align-items-start col-8 bg-white pt-5 position-relative pb-5">
+        <div className="d-flex flex-column align-items-start font-poppins mb-5 w-50 position-relative start-15">
+          <h1 className="m-0 fw-bold text-black">Get in touch</h1>
+        <h1 className="m-0 fw-bold text-orange neon">We're waiting<br/> your reservation!!!</h1>
+        </div>
 
-          if (!values.email) {
-            errors.email = "Email requerido";
-          } else if (
-            !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i.test(values.email)
-          ) {
-            errors.email = "Formato de Email incorrecto";
-          }
+        <Formik
+          onSubmit={handleSubmit}
+          initialValues={{
+            Name: '',
+            Email: '',
+            Phone: '',
+            Message: '',
+          }}
+          validate={(values) => {
+            const errors = {};
+            if (!values.Name) {
+              errors.Name = 'Name required!';
+            }
 
-          if (!values.message) {
-            errors.message = "Campo requerido";
-          }
-          return errors;
-        }}
-      >
-        {({ touched, errors, isValid }) => (
-          <Form>
-            <div className="d-flex flex-column">
-              <label>Name</label>
-              <Field name="name" type="text" />
-              {touched.name && errors.name && (
-                <p className="text-danger my-1">{errors.name}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Email</label>
-              <Field name="email" type="text" />
-              {touched.email && errors.email && (
-                <p className="text-danger my-1">{errors.email}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Phone</label>
-              <Field name="phone" type="text" />
-              {touched.phone && errors.phone && (
-                <p className="text-danger my-1">{errors.phone}</p>
-              )}
-            </div>
-            <div className="d-flex flex-column">
-              <label>Message</label>
-              <Field name="message" type="text" as="textarea" />
-              {touched.message && errors.message && (
-                <p className="text-danger my-1">{errors.message}</p>
-              )}
-            </div>
-            <button type="submit" disabled={!isValid}>
-              Send
-            </button>
-          </Form>
-        )}
-      </Formik>
+            if (!values.Email) {
+              errors.Email = 'Email required!';
+            } else if (
+              !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,}$/i.test(values.Email)
+            ) {
+              errors.Email = 'Please enter a valid email';
+            }
 
-    </section>
+            if (!values.Message) {
+              errors.Message = 'Message required!';
+            }
+            return errors;
+          }}
+        >
+          {({ touched, errors, isValid }) => (
+            <Form className="w-50 position-relative start-15">
+              <div className="d-flex flex-column w-100">
+                {fields.map(({ name, type }) => (
+                  <div className="my-3 w-100" key={name}>
+                    <Field
+                      placeholder={name}
+                      className="input-form bg-white py-2 w-100"
+                      name={name}
+                      type={type}
+                      as={name === 'Message' ? 'textarea' : null}
+                    />
+                    {touched[name] && errors[name] && (
+                      <p className="my-1 text-red-400">{errors[name]}</p>
+                    )}
+                  </div>
+                ))}
+                <button
+                  className={`${
+                    isValid
+                      ? 'bg-orange text-light cursor-pointer'
+                      : 'bg-gray-200 text-gray-100 cursor-not-allowed'
+                  } border-0 col-3 rounded-pill py-3 px-4 mt-4`}
+                  type="submit"
+                  disabled={!isValid}
+                >
+                  Send
+                </button>
+              </div>
+            </Form>
+          )}
+        </Formik>
+      </div>
+      <div className="col-4 bg-orange"></div>
+      <img
+        src={image3}
+        alt="Sunset"
+        className="vw-30 position-absolute top-50 end-0 translate-middle"
+      />
+    </div>
   );
 }
-export default Contact;
