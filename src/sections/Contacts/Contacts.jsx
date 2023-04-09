@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Field, Form, Formik } from "formik";
 import image3 from "../../assets/fondo2.webp";
@@ -120,4 +121,5 @@ export default function Contact() {
                />
           </div>
      );
+
 }
