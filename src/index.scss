@@ -84,6 +84,7 @@ $utilities: map-merge(
       values: (
         "orange": $orange,
         "gray": $gray-input,
+        "gray-300":$gray-300
 
       ),
     ),
@@ -246,7 +247,7 @@ $utilities: map-merge(
 
 // 6. Add additional custom code here
 .header-buttons {
-  border-bottom: 1px solid $orange;
+  border-bottom: 3px solid $orange;
 }
 .neon {
   text-shadow: 0px 0px 5px white, 0px 0px 15px  white, 0px 0px 30px  white,

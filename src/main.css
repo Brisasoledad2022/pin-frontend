@@ -1577,6 +1577,10 @@
   background-color: #bebebe !important;
 }
 
+.bg-gray-300 {
+  background-color: #343434 !important;
+}
+
 .bg-opacity-10 {
   --bs-bg-opacity: 0.1;
 }
@@ -4280,7 +4284,7 @@
   }
 }
 .header-buttons {
-  border-bottom: 1px solid #e0752f;
+  border-bottom: 3px solid #e0752f;
 }
 
 .neon {

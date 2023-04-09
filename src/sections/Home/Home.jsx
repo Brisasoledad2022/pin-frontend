@@ -23,7 +23,7 @@ function Home(){
 
                 className="d-block w-100 img-carousel"
 
-                alt="..."
+                alt="bar entry"
               />
             </div>
             <div className="carousel-item">
@@ -32,7 +32,7 @@ function Home(){
 
                 className="d-block w-100 img-carousel"
 
-                alt="..."
+                alt="bar entry different view"
               />
             </div>
             <div className="carousel-item">
@@ -41,7 +41,7 @@ function Home(){
 
                 className="d-block w-100 img-carousel"
 
-                alt="..."
+                alt=" bar entry different view front"
               />
             </div>
           </div>
