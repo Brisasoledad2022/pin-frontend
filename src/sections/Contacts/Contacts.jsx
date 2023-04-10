@@ -72,6 +72,11 @@ export default function Contact() {
             if (!values.Message) {
               errors.Message = "Message required!";
             }
+            
+            if (!values.Phone) {
+               errors.Phone = "Phone required!";
+             }
+
             return errors;
           }}
         >
