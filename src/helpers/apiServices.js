@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const baseURL = "https://pin-backend-production-9c43.up.railway.app";
+const baseURL = "https://pin-backend-production-9c43.up.railway.app/contactos";
 
 
 export const sendMessage = async (values) => {
