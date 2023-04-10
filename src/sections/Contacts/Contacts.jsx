@@ -11,7 +11,7 @@ export default function Contact() {
         correo: values.Email,
         telefono: values.Phone,
         mensaje: values.Message,
-      }).then((res) => alert("Message sent correctly!"));
+      })
     } catch (error) {
       alert(error);
     }
