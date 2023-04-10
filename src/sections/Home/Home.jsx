@@ -1,7 +1,7 @@
 import image1 from"../../assets/bar1.jpg"
 import image2 from"../../assets/bar2.jpeg"
-
 import image3 from"../../assets/bar007.jpeg"
+import Navbar from "../Navbar/Navbar"
 
 
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { UilAngleDown, UilAngleUp } from '@iconscout/react-unicons';
 
 export default function Accordion({ className }) {
-  const [activeItem, setActiveItem] = useState(997);
+  const [activeItem, setActiveItem] = useState(null);
 
   const clickHandler = (id) => {
     if (activeItem === id) {
