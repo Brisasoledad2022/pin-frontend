@@ -745,6 +745,10 @@
   height: 100vh !important;
 }
 
+.vh-40 {
+  height: 40vh !important;
+}
+
 .min-vh-100 {
   min-height: 100vh !important;
 }
