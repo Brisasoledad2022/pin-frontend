@@ -11,7 +11,7 @@ function App() {
   console.log(mobileDesign);
   return (
     <div className="w-100 min-vh-100">
-      {mobileDesign ? <h1> At mobile version</h1> : <Home />}
+      <Home />
 
       <About />
       <Products />
