@@ -2,6 +2,7 @@ import React from "react";
 import { Field, Form, Formik } from "formik";
 import image3 from "../../assets/fondo2.webp";
 import { sendMessage } from "../../helpers/apiServices";
+import useWindowInfo from "../../hooks/useWindowInfo";
 
 export default function Contact() {
   const handleSubmit = (values) => {
@@ -11,7 +12,7 @@ export default function Contact() {
         correo: values.Email,
         telefono: values.Phone,
         mensaje: values.Message,
-      })
+      });
     } catch (error) {
       alert(error);
     }
@@ -36,10 +37,20 @@ export default function Contact() {
     },
   ];
 
+  const { mobileDesign } = useWindowInfo();
+
   return (
-    <div className="d-flex w-100 vh-100 position-relative" id="Contact">
-      <div className="d-flex flex-column justify-content-center align-items-start col-8 bg-white pt-5 position-relative pb-5">
-        <div className="d-flex flex-column align-items-start font-poppins mb-5 w-50 position-relative start-15">
+    <div className="d-flex w-100 vh-100 position-relative" id="Contacts">
+      <div
+        className={`d-flex flex-column justify-content-center align-items-start ${
+          mobileDesign ? "col-12" : "col-8"
+        } bg-gray-100 position-relative`}
+      >
+        <div
+          className={`d-flex flex-column align-items-start font-poppins my-5 ${
+            mobileDesign ? "ps-5 w-100" : "position-relative start-15 w-50"
+          }`}
+        >
           <h1 className="m-0 fw-bold text-black">Get in touch</h1>
           <h1 className="m-0 fw-bold text-orange neon">
             We're waiting
@@ -72,17 +83,25 @@ export default function Contact() {
             if (!values.Message) {
               errors.Message = "Message required!";
             }
-            
+
             if (!values.Phone) {
-               errors.Phone = "Phone required!";
-             }
+              errors.Phone = "Phone required!";
+            }
 
             return errors;
           }}
         >
           {({ touched, errors, isValid }) => (
-            <Form className="w-50 position-relative start-15">
-              <div className="d-flex flex-column w-100">
+            <Form
+              className={`${
+                mobileDesign ? "w-100" : "w-50 position-relative start-15"
+              }`}
+            >
+              <div
+                className={`d-flex flex-column w-100 ${
+                  mobileDesign && "px-5"
+                } mb-5`}
+              >
                 {fields.map(({ name, type }) => (
                   <div className="my-3 w-100" key={name}>
                     <Field
@@ -102,7 +121,9 @@ export default function Contact() {
                     isValid
                       ? "bg-orange text-light cursor-pointer"
                       : "bg-gray-200 text-gray-100 cursor-not-allowed"
-                  } border-0 col-3 rounded-pill py-3 px-4 mt-4`}
+                  } border-0 rounded-pill py-3 px-4 mt-4 ${
+                    mobileDesign ? "col-4" : "col-3"
+                  }`}
                   type="submit"
                   disabled={!isValid}
                 >
@@ -113,12 +134,17 @@ export default function Contact() {
           )}
         </Formik>
       </div>
-      <div className="col-4 bg-orange"></div>
-      <img
-        src={image3}
-        alt="Bar image"
-        className="vw-30 position-absolute top-50 end-0 translate-middle"
-      />
+
+      {!mobileDesign && (
+        <>
+          <div className="col-4 bg-orange"></div>
+          <img
+            src={image3}
+            alt="bar background perspective"
+            className="vw-30 position-absolute top-50 end-0 translate-middle"
+          />
+        </>
+      )}
     </div>
   );
 }
